@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('posts.index');
+//});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index')->name('index');
+Route::get('/posts-create', 'PostController@create')->name('posts-create');
+Route::post('posts-store', 'PostController@store')->name('posts-store');
+Route::get('posts-show/{id}', 'PostController@show')->name('posts-show');
+
+Route::post('comments-store', 'CommentController@store')->name('comments-store');
+
+//Route::get('/', 'PostController@index')->name('/');
+//Route::get('posts.index', 'PostController@index')->name('posts.index');
+//Route::get('posts.show', 'PostController@show')->name('posts.show');
+//Route::get('/posts.create', 'PostController@create')->name('posts.create');
+//Route::post('posts.store', 'PostController@store')->name('posts.store');
+//Route::get('posts.show/{id}', 'PostController@show')->name('posts.show');
+//Route::post('comments.store', 'CommentController@store')->name('comments.store');
