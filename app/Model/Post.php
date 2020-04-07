@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use SoftDeletes;
-
-    protected $dates = ['deleted_at'];
-
     /**
      * The attributes that are mass assignable.
      *

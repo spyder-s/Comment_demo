@@ -28,7 +28,7 @@
                             <hr/>
                             <h5>Add comment</h5>
                             @if(!empty($post->id))
-                                <form method="post" action="{{ route('comments-store'   ) }}">
+                                <form method="post" action="{{ route('comments-store') }}">
                                     @csrf
                                     <div class="form-group">
                                         <textarea class="form-control" name="body"></textarea>
