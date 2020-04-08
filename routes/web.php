@@ -29,6 +29,13 @@ Route::get('posts-show/{id}', 'PostController@show')->name('posts-show');
 
 Route::post('comments-store', 'CommentController@store')->name('comments-store');
 
+Route::get('contact-list', 'ChatController@contact_list')->name('contact-list');
+Route::get('message-send/{id}', 'ChatController@index')->name('message-send');
+//Route::post('message-send', 'ChatController@index')->name('message-send');
+Route::post('chat-message', 'ChatController@chat_message')->name('chat-message');
+
+
+
 //Route::get('/', 'PostController@index')->name('/');
 //Route::get('posts.index', 'PostController@index')->name('posts.index');
 //Route::get('posts.show', 'PostController@show')->name('posts.show');
