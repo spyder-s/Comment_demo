@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::post('message_data', 'Api\ChatController@message_data');
+//Route::get('count', 'Api\ChatController@count');
