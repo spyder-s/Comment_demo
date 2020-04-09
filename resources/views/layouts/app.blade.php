@@ -55,7 +55,7 @@
         }
 
         .user-wrapper {
-            height: 600px;
+            height: 500px;
         }
 
         .user {
@@ -102,7 +102,7 @@
 
         .message-wrapper {
             padding: 10px;
-            height: 536px;
+            height: 450px;
             background: #eeeeee;
         }
 
@@ -198,7 +198,6 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -212,6 +211,11 @@
                                 </form>
                             </div>
                         </li>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
                     @endguest
                 </ul>
             </div>
@@ -223,8 +227,8 @@
     </main>
 </div>
 </body>
-<script src="https://js.pusher.com/5.1/pusher.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://js.pusher.com/5.1/pusher.min.js"></script>
 <script>
     var receiver_id = '';
     var my_id = "{{ Auth::id() }}";
