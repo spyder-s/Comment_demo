@@ -6,10 +6,7 @@
             <div class="col-md-12">
                 <h3>Manage Posts</h3>
                 <a href="{{ route('posts-create') }}" class="btn btn-success mb-3" style="float: right">Create Post</a>
-
-                <a href="{{ route('contact-list') }}" class="btn btn-info mb-3 mr-5" style="float: right">Message</a>
-                {{--                <a href="{{ route('message-send') }}" class="btn btn-info mb-3 mr-5" style="float: right">Send--}}
-                {{--                    Message</a>--}}
+                <a href="{{ route('chat') }}" class="btn btn-info mb-3 mr-5" style="float: right">Message</a>
                 <table class="table table-bordered">
                     <thead>
                     <th width="80px">Id</th>

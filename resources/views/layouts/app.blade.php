@@ -55,7 +55,7 @@
         }
 
         .user-wrapper {
-            height: 500px;
+            height: 400px;
         }
 
         .user {
@@ -102,7 +102,7 @@
 
         .message-wrapper {
             padding: 10px;
-            height: 450px;
+            height: 420px;
             background: #eeeeee;
         }
 
@@ -262,7 +262,7 @@
                     if (pending) {
                         $('#' + data.from).find('.pending').html(pending + 1);
                     } else {
-                        $('#' + data.from).append('<span class="pending">1</span>')
+                        $('#' + data.from).append('<span class="pending"></span>')
                     }
                 }
             }

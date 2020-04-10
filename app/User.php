@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role', 'user_id'
     ];
 
     /**
@@ -38,32 +38,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // A user can send a message
-    public function sent()
-    {
-        return $this->hasMany(Chat::class, 'sender_id');
-    }
-
-    // A user can also receive a message
-    public function received()
-    {
-        return $this->hasMany(Chat::class, 'sent_to_id');
-    }
-
-    /**
-     * Get User Info
-     * @param $user_id
-     * @return array|string
-     */
     public static function get_user_info($user_id = '')
     {
         try {
-
-            $user = User::where('id', $user_id)->first();
-            if (empty($user)) {
-                return ['status' => 'error', 'data' => 'User data not found'];
+            $user_data = User::where('id', $user_id)->first();
+            if (empty($user_data)) {
+                return ['status' => 'error', 'data' => 'User not found'];
             }
-            return $user;
+            return $user_data;
+        } catch (Exception $e) {
+            return ['status' => 'error', 'data' => $e];
+        }
+    }
+
+    public static function group_create($array)
+    {
+        try {
+            $data = User::create($array);
+            return ['status' => 'ok', 'data' => $data];
         } catch (Exception $e) {
             return ['status' => 'error', 'data' => $e];
         }

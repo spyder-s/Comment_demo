@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Route::post('message_data', 'Api\ChatController@message_data');
 //Route::get('count', 'Api\ChatController@count');
+
+Route::post('message', 'HomeController@sendMessage');
